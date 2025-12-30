@@ -1,0 +1,146 @@
+0 verbose cli /usr/local/bin/node /usr/local/bin/npm
+1 info using npm@11.6.2
+2 info using node@v24.11.1
+3 silly config load:file:/usr/local/lib/node_modules/npm/npmrc
+4 silly config load:file:/Users/pnoukounwoui/Documents/GitHub/Dashnoukdev/.npmrc
+5 silly config load:file:/Users/pnoukounwoui/.npmrc
+6 silly config load:file:/usr/local/etc/npmrc
+7 verbose title npm install class-variance-authority clsx tailwind-merge lucide-react
+8 verbose argv "install" "class-variance-authority" "clsx" "tailwind-merge" "lucide-react"
+9 verbose logfile logs-max:10 dir:/Users/pnoukounwoui/Documents/GitHub/Dashnoukdev/.npm-cache/_logs/2025-12-30T15_10_30_391Z-
+10 verbose logfile /Users/pnoukounwoui/Documents/GitHub/Dashnoukdev/.npm-cache/_logs/2025-12-30T15_10_30_391Z-debug-0.log
+11 silly logfile done cleaning log files
+12 silly packumentCache heap:4496293888 maxSize:1124073472 maxEntrySize:562036736
+13 silly idealTree buildDeps
+14 silly fetch manifest class-variance-authority@*
+15 silly packumentCache full:https://registry.npmjs.org/class-variance-authority cache-miss
+16 http fetch GET 200 https://registry.npmjs.org/npm 531ms
+17 http fetch GET 200 https://registry.npmjs.org/class-variance-authority 503ms (cache miss)
+18 silly packumentCache full:https://registry.npmjs.org/class-variance-authority set size:undefined disposed:false
+19 silly fetch manifest clsx@*
+20 silly packumentCache full:https://registry.npmjs.org/clsx cache-miss
+21 http fetch GET 200 https://registry.npmjs.org/clsx 89ms (cache miss)
+22 silly packumentCache full:https://registry.npmjs.org/clsx set size:undefined disposed:false
+23 silly fetch manifest tailwind-merge@*
+24 silly packumentCache full:https://registry.npmjs.org/tailwind-merge cache-miss
+25 http fetch GET 200 https://registry.npmjs.org/tailwind-merge 189ms (cache miss)
+26 silly packumentCache full:https://registry.npmjs.org/tailwind-merge set size:undefined disposed:false
+27 silly fetch manifest lucide-react@*
+28 silly packumentCache full:https://registry.npmjs.org/lucide-react cache-miss
+29 http fetch GET 200 https://registry.npmjs.org/lucide-react 216ms (cache miss)
+30 silly packumentCache full:https://registry.npmjs.org/lucide-react set size:undefined disposed:false
+31 silly fetch manifest react@^19.2.3
+32 silly packumentCache full:https://registry.npmjs.org/react cache-miss
+33 http fetch GET 200 https://registry.npmjs.org/react 360ms (cache miss)
+34 silly packumentCache full:https://registry.npmjs.org/react set size:undefined disposed:false
+35 silly placeDep ROOT class-variance-authority@0.7.1 OK for: dashnoukdev@0.1.0 want: *
+36 silly placeDep ROOT clsx@2.1.1 OK for: dashnoukdev@0.1.0 want: *
+37 silly placeDep ROOT lucide-react@0.562.0 OK for: dashnoukdev@0.1.0 want: *
+38 silly placeDep ROOT tailwind-merge@3.4.0 OK for: dashnoukdev@0.1.0 want: *
+39 silly fetch manifest clsx@^2.1.1
+40 silly packumentCache full:https://registry.npmjs.org/clsx cache-miss
+41 http cache https://registry.npmjs.org/clsx 9ms (cache hit)
+42 silly packumentCache full:https://registry.npmjs.org/clsx set size:42506 disposed:false
+43 silly reify moves {}
+44 silly audit bulk request {
+44 silly audit   '@emnapi/runtime': [ '1.7.1' ],
+44 silly audit   '@img/colour': [ '1.0.0' ],
+44 silly audit   '@img/sharp-darwin-arm64': [ '0.34.5' ],
+44 silly audit   '@img/sharp-darwin-x64': [ '0.34.5' ],
+44 silly audit   '@img/sharp-libvips-darwin-arm64': [ '1.2.4' ],
+44 silly audit   '@img/sharp-libvips-darwin-x64': [ '1.2.4' ],
+44 silly audit   '@img/sharp-libvips-linux-arm': [ '1.2.4' ],
+44 silly audit   '@img/sharp-libvips-linux-arm64': [ '1.2.4' ],
+44 silly audit   '@img/sharp-libvips-linux-ppc64': [ '1.2.4' ],
+44 silly audit   '@img/sharp-libvips-linux-riscv64': [ '1.2.4' ],
+44 silly audit   '@img/sharp-libvips-linux-s390x': [ '1.2.4' ],
+44 silly audit   '@img/sharp-libvips-linux-x64': [ '1.2.4' ],
+44 silly audit   '@img/sharp-libvips-linuxmusl-arm64': [ '1.2.4' ],
+44 silly audit   '@img/sharp-libvips-linuxmusl-x64': [ '1.2.4' ],
+44 silly audit   '@img/sharp-linux-arm': [ '0.34.5' ],
+44 silly audit   '@img/sharp-linux-arm64': [ '0.34.5' ],
+44 silly audit   '@img/sharp-linux-ppc64': [ '0.34.5' ],
+44 silly audit   '@img/sharp-linux-riscv64': [ '0.34.5' ],
+44 silly audit   '@img/sharp-linux-s390x': [ '0.34.5' ],
+44 silly audit   '@img/sharp-linux-x64': [ '0.34.5' ],
+44 silly audit   '@img/sharp-linuxmusl-arm64': [ '0.34.5' ],
+44 silly audit   '@img/sharp-linuxmusl-x64': [ '0.34.5' ],
+44 silly audit   '@img/sharp-wasm32': [ '0.34.5' ],
+44 silly audit   '@img/sharp-win32-arm64': [ '0.34.5' ],
+44 silly audit   '@img/sharp-win32-ia32': [ '0.34.5' ],
+44 silly audit   '@img/sharp-win32-x64': [ '0.34.5' ],
+44 silly audit   '@next/env': [ '16.1.1' ],
+44 silly audit   '@next/swc-darwin-arm64': [ '16.1.1' ],
+44 silly audit   '@next/swc-darwin-x64': [ '16.1.1' ],
+44 silly audit   '@next/swc-linux-arm64-gnu': [ '16.1.1' ],
+44 silly audit   '@next/swc-linux-arm64-musl': [ '16.1.1' ],
+44 silly audit   '@next/swc-linux-x64-gnu': [ '16.1.1' ],
+44 silly audit   '@next/swc-linux-x64-musl': [ '16.1.1' ],
+44 silly audit   '@next/swc-win32-arm64-msvc': [ '16.1.1' ],
+44 silly audit   '@next/swc-win32-x64-msvc': [ '16.1.1' ],
+44 silly audit   '@swc/helpers': [ '0.5.15' ],
+44 silly audit   '@types/node': [ '25.0.3' ],
+44 silly audit   '@types/react': [ '19.2.7' ],
+44 silly audit   '@types/react-dom': [ '19.2.3' ],
+44 silly audit   autoprefixer: [ '10.4.23' ],
+44 silly audit   'baseline-browser-mapping': [ '2.9.11' ],
+44 silly audit   browserslist: [ '4.28.1' ],
+44 silly audit   'caniuse-lite': [ '1.0.30001762' ],
+44 silly audit   'client-only': [ '0.0.1' ],
+44 silly audit   csstype: [ '3.2.3' ],
+44 silly audit   'detect-libc': [ '2.1.2' ],
+44 silly audit   'electron-to-chromium': [ '1.5.267' ],
+44 silly audit   escalade: [ '3.2.0' ],
+44 silly audit   'fraction.js': [ '5.3.4' ],
+44 silly audit   nanoid: [ '3.3.11' ],
+44 silly audit   next: [ '16.1.1' ],
+44 silly audit   postcss: [ '8.4.31', '8.5.6' ],
+44 silly audit   'node-releases': [ '2.0.27' ],
+44 silly audit   picocolors: [ '1.1.1' ],
+44 silly audit   'postcss-value-parser': [ '4.2.0' ],
+44 silly audit   react: [ '19.2.3' ],
+44 silly audit   'react-dom': [ '19.2.3' ],
+44 silly audit   scheduler: [ '0.27.0' ],
+44 silly audit   semver: [ '7.7.3' ],
+44 silly audit   sharp: [ '0.34.5' ],
+44 silly audit   'source-map-js': [ '1.2.1' ],
+44 silly audit   'styled-jsx': [ '5.1.6' ],
+44 silly audit   tailwindcss: [ '4.1.18' ],
+44 silly audit   tslib: [ '2.8.1' ],
+44 silly audit   typescript: [ '5.9.3' ],
+44 silly audit   'undici-types': [ '7.16.0' ],
+44 silly audit   'update-browserslist-db': [ '1.2.3' ],
+44 silly audit   'class-variance-authority': [ '0.7.1' ],
+44 silly audit   clsx: [ '2.1.1' ],
+44 silly audit   'lucide-react': [ '0.562.0' ],
+44 silly audit   'tailwind-merge': [ '3.4.0' ]
+44 silly audit }
+45 http cache tailwind-merge@https://registry.npmjs.org/tailwind-merge/-/tailwind-merge-3.4.0.tgz 0ms (cache hit)
+46 http cache clsx@https://registry.npmjs.org/clsx/-/clsx-2.1.1.tgz 0ms (cache hit)
+47 http cache lucide-react@https://registry.npmjs.org/lucide-react/-/lucide-react-0.562.0.tgz 0ms (cache hit)
+48 http cache class-variance-authority@https://registry.npmjs.org/class-variance-authority/-/class-variance-authority-0.7.1.tgz 0ms (cache hit)
+49 silly tarball no local data for tailwind-merge@https://registry.npmjs.org/tailwind-merge/-/tailwind-merge-3.4.0.tgz. Extracting by manifest.
+50 silly tarball no local data for clsx@https://registry.npmjs.org/clsx/-/clsx-2.1.1.tgz. Extracting by manifest.
+51 silly tarball no local data for lucide-react@https://registry.npmjs.org/lucide-react/-/lucide-react-0.562.0.tgz. Extracting by manifest.
+52 silly tarball no local data for class-variance-authority@https://registry.npmjs.org/class-variance-authority/-/class-variance-authority-0.7.1.tgz. Extracting by manifest.
+53 http fetch GET 200 https://registry.npmjs.org/tailwind-merge/-/tailwind-merge-3.4.0.tgz 159ms (cache miss)
+54 http fetch POST 200 https://registry.npmjs.org/-/npm/v1/security/advisories/bulk 218ms
+55 silly audit report {}
+56 http fetch GET 200 https://registry.npmjs.org/class-variance-authority/-/class-variance-authority-0.7.1.tgz 254ms (cache miss)
+57 http fetch GET 200 https://registry.npmjs.org/clsx/-/clsx-2.1.1.tgz 506ms (cache miss)
+58 http fetch GET 200 https://registry.npmjs.org/lucide-react/-/lucide-react-0.562.0.tgz 3155ms (cache miss)
+59 silly ADD node_modules/tailwind-merge
+60 silly ADD node_modules/lucide-react
+61 silly ADD node_modules/clsx
+62 silly ADD node_modules/class-variance-authority
+63 verbose cwd /Users/pnoukounwoui/Documents/GitHub/Dashnoukdev
+64 verbose os Darwin 25.2.0
+65 verbose node v24.11.1
+66 verbose npm  v11.6.2
+67 notice
+67 notice New minor version of npm available! 11.6.2 -> 11.7.0
+67 notice Changelog: https://github.com/npm/cli/releases/tag/v11.7.0
+67 notice To update run: npm install -g npm@11.7.0
+67 notice  { force: true, Symbol(proc-log.meta): true }
+68 verbose exit 0
+69 info ok
