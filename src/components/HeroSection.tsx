@@ -9,8 +9,8 @@ export function HeroSection() {
   const [stats, setStats] = useState({ projects: 0, skills: 0, years: 0 });
 
   useEffect(() => {
-    // Animation des stats
-    const targetStats = { projects: 3, skills: 15, years: 6 };
+    // Animation des stats - Valeurs réelles de Prince Noukounwoui
+    const targetStats = { projects: 5, skills: 18, years: 4 };
     const duration = 2000;
     const steps = 50;
     const interval = duration / steps;
