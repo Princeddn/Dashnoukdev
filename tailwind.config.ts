@@ -9,12 +9,36 @@ export default {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        sans: ['-apple-system', 'BlinkMacSystemFont', '"SF Pro Display"', '"SF Pro Text"', '"Segoe UI"', 'system-ui', 'sans-serif'],
+      },
       borderRadius: {
+        'apple-sm': '12px',
+        'apple': '16px',
+        'apple-lg': '24px',
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
       },
+      boxShadow: {
+        'apple-subtle': '0 2px 16px rgba(0, 0, 0, 0.12)',
+        'apple-medium': '0 4px 32px rgba(0, 0, 0, 0.16)',
+        'apple-strong': '0 8px 48px rgba(0, 0, 0, 0.24)',
+      },
       colors: {
+        // Apple colors from portfolio
+        'apple-blue': '#007AFF',
+        'apple-purple': '#5856D6',
+        'apple-orange': '#FF9500',
+        'apple-green': '#30D158',
+        'apple-gray': {
+          50: '#F5F5F7',
+          100: '#EFEFF1',
+          200: '#D2D2D7',
+          300: '#A1A1A6',
+          400: '#86868B',
+          900: '#1D1D1F',
+        },
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         card: {
