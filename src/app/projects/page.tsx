@@ -4,7 +4,7 @@ import { useState } from "react";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import type { Project, ProjectStatus, ProjectType } from "@/types";
+import type { ProjectStatus, ProjectType } from "@/types";
 import { Github, ExternalLink, Lightbulb, Hammer, Rocket, Play, Pause, ArrowLeft } from "lucide-react";
 import Link from "next/link";
 import { demoProjects } from "@/lib/demo-data";

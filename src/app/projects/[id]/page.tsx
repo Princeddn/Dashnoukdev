@@ -1,5 +1,3 @@
-"use client";
-
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -8,6 +6,13 @@ import { Github, ExternalLink, ArrowLeft, Calendar, Lightbulb, Hammer, Rocket, P
 import Link from "next/link";
 import { demoProjects } from "@/lib/demo-data";
 import { notFound } from "next/navigation";
+
+// Générer les routes statiques pour tous les projets
+export function generateStaticParams() {
+  return demoProjects.map((project) => ({
+    id: project.id,
+  }));
+}
 
 function getStatusBadge(status: ProjectStatus) {
   const variants = {
@@ -39,8 +44,13 @@ function getTypeLabel(type: ProjectType) {
   return labels[type];
 }
 
-export default function ProjectDetailPage({ params }: { params: { id: string } }) {
-  const project = demoProjects.find((p) => p.id === params.id);
+export default async function ProjectDetailPage({
+  params
+}: {
+  params: Promise<{ id: string }>
+}) {
+  const { id } = await params;
+  const project = demoProjects.find((p) => p.id === id);
 
   if (!project) {
     notFound();
