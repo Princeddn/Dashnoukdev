@@ -1,13 +1,13 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import type { ProjectStatus, ProjectType } from "@/types";
+import type { ProjectStatus, ProjectType, Project } from "@/types";
 import { Github, ExternalLink, Lightbulb, Hammer, Rocket, Play, Pause, ArrowLeft } from "lucide-react";
 import Link from "next/link";
-import { demoProjects } from "@/lib/demo-data";
+import { supabase } from "@/lib/supabase";
 
 function getStatusBadge(status: ProjectStatus) {
   const variants = {
@@ -40,11 +40,33 @@ function getTypeLabel(type: ProjectType) {
 }
 
 export default function ProjectsPage() {
+  const [projects, setProjects] = useState<Project[]>([]);
+  const [loading, setLoading] = useState(true);
   const [selectedType, setSelectedType] = useState<ProjectType | "all">("all");
   const [selectedStatus, setSelectedStatus] = useState<ProjectStatus | "all">("all");
 
+  useEffect(() => {
+    async function fetchProjects() {
+      try {
+        const { data } = await supabase
+          .from('projects')
+          .select('*')
+          .is('deleted_at', null)
+          .order('created_at', { ascending: false });
+
+        if (data) setProjects(data as Project[]);
+      } catch (error) {
+        console.error('Error fetching projects:', error);
+      } finally {
+        setLoading(false);
+      }
+    }
+
+    fetchProjects();
+  }, []);
+
   // Filtrer les projets
-  const filteredProjects = demoProjects.filter((project) => {
+  const filteredProjects = projects.filter((project) => {
     const typeMatch = selectedType === "all" || project.type === selectedType;
     const statusMatch = selectedStatus === "all" || project.status === selectedStatus;
     return typeMatch && statusMatch;
@@ -52,6 +74,17 @@ export default function ProjectsPage() {
 
   const types: (ProjectType | "all")[] = ["all", "web", "mobile", "software", "automation"];
   const statuses: (ProjectStatus | "all")[] = ["all", "idea", "building", "mvp", "production", "paused"];
+
+  if (loading) {
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <div className="text-center">
+          <div className="inline-block h-8 w-8 animate-spin rounded-full border-4 border-solid border-current border-r-transparent"></div>
+          <p className="mt-4 text-muted-foreground">Chargement des projets...</p>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <main className="min-h-screen py-12">
