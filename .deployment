@@ -1,0 +1,19 @@
+[config]
+# Configuration de déploiement pour Hostinger
+# Ce fichier est utilisé par certaines plateformes d'hébergement
+
+# Commande d'installation des dépendances
+install = npm install
+
+# Commande de build
+build = npm run build
+
+# Dossier de sortie
+output = out
+
+# Version Node.js requise
+node_version = 18
+
+# Variables d'environnement requises (à configurer dans le panneau Hostinger)
+# NEXT_PUBLIC_SUPABASE_URL
+# NEXT_PUBLIC_SUPABASE_ANON_KEY
