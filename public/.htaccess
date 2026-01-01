@@ -3,17 +3,36 @@
 # Activer le moteur de réécriture
 <IfModule mod_rewrite.c>
   RewriteEngine On
+  RewriteBase /
 
   # Forcer HTTPS (optionnel mais recommandé)
   RewriteCond %{HTTPS} off
   RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
-  # Ne pas réécrire les fichiers et dossiers existants
+  # Supprimer le trailing slash sauf pour la racine
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteCond %{REQUEST_URI} (.+)/$
+  RewriteRule ^ %1 [L,R=301]
+
+  # Ne pas réécrire les fichiers existants
+  RewriteCond %{REQUEST_FILENAME} -f
+  RewriteRule ^ - [L]
+
+  # Ne pas réécrire les dossiers _next et autres assets
+  RewriteRule ^(_next|images|favicon\.ico|robots\.txt|sitemap\.xml) - [L]
+
+  # Essayer d'abord le fichier .html exact
+  RewriteCond %{REQUEST_FILENAME}.html -f
+  RewriteRule ^(.*)$ $1.html [L]
+
+  # Ensuite essayer index.html dans le dossier
+  RewriteCond %{REQUEST_FILENAME}/index.html -f
+  RewriteRule ^(.*)$ $1/index.html [L]
+
+  # Si rien ne correspond, rediriger vers index.html (SPA fallback)
   RewriteCond %{REQUEST_FILENAME} !-f
   RewriteCond %{REQUEST_FILENAME} !-d
-
-  # Gérer les routes Next.js - rediriger vers les fichiers .html
-  RewriteRule ^([^.]+)$ $1.html [NC,L]
+  RewriteRule ^ index.html [L]
 </IfModule>
 
 # Compression Gzip pour améliorer les performances
