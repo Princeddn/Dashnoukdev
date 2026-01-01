@@ -49,3 +49,19 @@ export interface Goal {
 
 // Type pour les outils (simple liste de strings)
 export type Tool = string;
+
+// Types pour les expériences professionnelles
+export interface Experience {
+  id: string;
+  company: string;
+  position: string;
+  location: string | null;
+  start_date: string;
+  end_date: string | null;
+  is_current: boolean;
+  description: string;
+  achievements: string[];
+  technologies: string[];
+  created_at: string;
+  deleted_at: string | null;
+}
