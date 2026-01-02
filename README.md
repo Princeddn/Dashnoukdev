@@ -54,7 +54,7 @@ Ouvrir [http://localhost:3000](http://localhost:3000) dans votre navigateur.
 - `npm run dev` : Lance le serveur de développement
 - `npm run build` : Build le projet pour la production
 - `npm start` : Lance le serveur de production
-- `npm run lint` : Vérifie la qualité du code
+- `npm run lint` : Vérifie la qualité du code.
 
 ## Structure du projet
 
