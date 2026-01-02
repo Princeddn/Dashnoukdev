@@ -8,21 +8,13 @@ import { SkillsSection } from "@/components/SkillsSection";
 import { ToolsSection } from "@/components/ToolsSection";
 import { ProjectsSection } from "@/components/ProjectsSection";
 import { supabase } from "@/lib/supabase";
-import type { Goal, Skill, Tool, Project } from "@/types";
+import type { Goal, Skill, Project } from "@/types";
 
 export default function Home() {
   const [goals, setGoals] = useState<Goal[]>([]);
   const [skills, setSkills] = useState<Skill[]>([]);
   const [projects, setProjects] = useState<Project[]>([]);
   const [loading, setLoading] = useState(true);
-
-  const tools: Tool[] = [
-    "Python", "JavaScript", "TypeScript", "Next.js", "React", "TailwindCSS",
-    "VBA Excel", "Arduino IDE", "Zigbee", "LoRaWAN", "Chirpstack",
-    "Jeedom", "KNX", "GTB/GTC", "MQTT", "Victron Energy", "VRM",
-    "Photovoltaïque", "Linux", "SSH", "Cloud", "GitHub", "Bases de données",
-    "QGIS", "ArcGIS", "GPS", "Arduino", "Capteurs IoT", "Électronique"
-  ];
 
   useEffect(() => {
     async function fetchData() {
@@ -71,7 +63,7 @@ export default function Home() {
           <SkillsSection skills={skills} />
         </section>
         <section id="outils">
-          <ToolsSection tools={tools} />
+          <ToolsSection />
         </section>
         <section id="projets">
           <ProjectsSection projects={projects} limit={6} />

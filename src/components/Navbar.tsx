@@ -3,8 +3,13 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
+import { useNavbarData } from "@/hooks/useSiteSettings";
+import { useNavigationLinks } from "@/hooks/useCMS";
 
 export function Navbar() {
+  const { data: navbarData, loading: navbarLoading } = useNavbarData();
+  const { data: navLinks, loading: linksLoading } = useNavigationLinks();
+
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -17,12 +22,18 @@ export function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const navLinks = [
-    { href: "#accueil", label: "Accueil" },
-    { href: "#objectifs", label: "Objectifs" },
-    { href: "#competences", label: "Compétences" },
-    { href: "#projets", label: "Projets" },
-  ];
+  // Show minimal navbar while loading
+  if (navbarLoading || linksLoading || !navbarData || !navLinks) {
+    return (
+      <nav className={`fixed top-0 left-0 right-0 z-50 glass-card shadow-apple-medium`}>
+        <div className="container mx-auto px-4">
+          <div className="flex items-center justify-between h-16">
+            <div className="w-10 h-10 rounded-apple bg-gradient-to-br from-apple-blue to-apple-purple flex items-center justify-center shadow-apple-subtle animate-pulse" />
+          </div>
+        </div>
+      </nav>
+    );
+  }
 
   return (
     <>
@@ -38,20 +49,21 @@ export function Navbar() {
             {/* Logo */}
             <Link href="/" className="flex items-center gap-2">
               <div className="w-10 h-10 rounded-apple bg-gradient-to-br from-apple-blue to-apple-purple flex items-center justify-center shadow-apple-subtle">
-                <span className="text-white font-bold text-lg">NP</span>
+                <span className="text-white font-bold text-lg">{navbarData.logo_text}</span>
               </div>
               <span className="font-semibold text-lg text-apple-gray-900 hidden sm:block">
-                Nouk Prince
+                {navbarData.site_name}
               </span>
             </Link>
 
             {/* Desktop Navigation */}
             <ul className="hidden md:flex items-center gap-1">
               {navLinks.map((link) => (
-                <li key={link.href}>
+                <li key={link.id}>
                   <a
                     href={link.href}
                     className="px-4 py-2 rounded-apple-sm text-apple-gray-900 hover:bg-apple-gray-100 transition-colors font-medium"
+                    {...(link.is_external && { target: "_blank", rel: "noopener noreferrer" })}
                   >
                     {link.label}
                   </a>
@@ -59,10 +71,10 @@ export function Navbar() {
               ))}
               <li>
                 <Link
-                  href="/projects"
+                  href={navbarData.cta_href}
                   className="ml-2 px-6 py-2 bg-apple-blue text-white rounded-apple-sm hover:bg-apple-blue/90 transition-colors font-medium shadow-apple-subtle"
                 >
-                  Tous les projets
+                  {navbarData.cta_text}
                 </Link>
               </li>
             </ul>
@@ -93,11 +105,12 @@ export function Navbar() {
           <div className="absolute top-16 left-0 right-0 glass-card m-4 rounded-apple-lg shadow-apple-strong">
             <ul className="py-4">
               {navLinks.map((link) => (
-                <li key={link.href}>
+                <li key={link.id}>
                   <a
                     href={link.href}
                     className="block px-6 py-3 text-apple-gray-900 hover:bg-apple-gray-100 transition-colors font-medium"
                     onClick={() => setIsMobileMenuOpen(false)}
+                    {...(link.is_external && { target: "_blank", rel: "noopener noreferrer" })}
                   >
                     {link.label}
                   </a>
@@ -105,11 +118,11 @@ export function Navbar() {
               ))}
               <li className="px-6 pt-2">
                 <Link
-                  href="/projects"
+                  href={navbarData.cta_href}
                   className="block text-center px-6 py-3 bg-apple-blue text-white rounded-apple hover:bg-apple-blue/90 transition-colors font-medium"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
-                  Tous les projets
+                  {navbarData.cta_text}
                 </Link>
               </li>
             </ul>
