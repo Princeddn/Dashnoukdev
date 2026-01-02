@@ -32,19 +32,21 @@ ALTER TABLE goals
   ADD COLUMN IF NOT EXISTS is_visible BOOLEAN DEFAULT true,
   ADD COLUMN IF NOT EXISTS order_index INTEGER DEFAULT 0;
 
+-- IMPORTANT: Drop old constraint FIRST before updating data
+ALTER TABLE goals DROP CONSTRAINT IF EXISTS goals_status_check;
+
 -- Update status values to match new schema (todo -> not_started, done -> completed)
 UPDATE goals SET status = 'not_started' WHERE status = 'todo';
 UPDATE goals SET status = 'completed' WHERE status = 'done';
+
+-- Add new status constraint AFTER updating data
+ALTER TABLE goals ADD CONSTRAINT goals_status_check
+  CHECK (status IN ('not_started', 'in_progress', 'completed'));
 
 -- Drop old columns
 ALTER TABLE goals DROP COLUMN IF EXISTS scope;
 ALTER TABLE goals DROP COLUMN IF EXISTS year;
 ALTER TABLE goals DROP COLUMN IF EXISTS month;
-
--- Update status constraint
-ALTER TABLE goals DROP CONSTRAINT IF EXISTS goals_status_check;
-ALTER TABLE goals ADD CONSTRAINT goals_status_check
-  CHECK (status IN ('not_started', 'in_progress', 'completed'));
 
 -- Add index for ordering
 CREATE INDEX IF NOT EXISTS idx_goals_order ON goals(order_index);
