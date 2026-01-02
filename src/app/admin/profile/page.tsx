@@ -61,8 +61,10 @@ export default function ProfilePage() {
           resume_url: "",
         };
 
+        // Map database keys (with profile_ prefix) to local state keys
         data.forEach((setting) => {
-          profileData[setting.key] = setting.value || "";
+          const key = setting.key.replace('profile_', ''); // Remove prefix
+          profileData[key] = setting.value || "";
         });
 
         setProfile(profileData as ProfileData);
@@ -77,12 +79,13 @@ export default function ProfilePage() {
   async function handleSave() {
     setSaving(true);
     try {
-      // Update each profile field
+      // Update each profile field with profile_ prefix
       for (const [key, value] of Object.entries(profile)) {
+        const dbKey = `profile_${key}`; // Add prefix
         await supabase
           .from("site_settings")
           .upsert({
-            key,
+            key: dbKey,
             value,
             category: "profile",
             type: "text",
@@ -150,12 +153,12 @@ export default function ProfilePage() {
       // Update profile state
       setProfile({ ...profile, avatar_url: newAvatarUrl });
 
-      // Save to database immediately
+      // Save to database immediately with profile_ prefix
       await supabase
         .from("site_settings")
         .upsert(
           {
-            key: "avatar_url",
+            key: "profile_avatar_url",
             value: newAvatarUrl,
             category: "profile",
             type: "text",

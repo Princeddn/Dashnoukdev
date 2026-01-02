@@ -65,8 +65,10 @@ export default function ContentPage() {
           cta_href: "",
         };
 
+        // Map database keys (with hero_ prefix) to local state keys
         heroSettings.forEach((setting) => {
-          hero[setting.key] = setting.value || "";
+          const key = setting.key.replace('hero_', ''); // Remove prefix
+          hero[key] = setting.value || "";
         });
 
         setHeroData(hero);
@@ -106,11 +108,13 @@ export default function ContentPage() {
     setSaving(true);
     try {
       for (const [key, value] of Object.entries(heroData)) {
+        // Add hero_ prefix to key when saving to database
+        const dbKey = `hero_${key}`;
         await supabase
           .from("site_settings")
           .upsert(
             {
-              key,
+              key: dbKey,
               value,
               category: "hero",
               type: typeof value === "number" ? "number" : "text",
