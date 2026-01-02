@@ -45,32 +45,54 @@ export default function ContentPage() {
   async function fetchContent() {
     try {
       // Fetch hero settings
-      const { data: heroSettings } = await supabase
+      const { data: heroSettings, error: heroError } = await supabase
         .from("site_settings")
         .select("*")
         .eq("category", "hero");
 
-      if (heroSettings) {
-        const hero: any = {};
+      if (heroError) {
+        console.error("Error fetching hero settings:", heroError);
+      }
+
+      if (heroSettings && heroSettings.length > 0) {
+        const hero: any = {
+          greeting: "",
+          title: "",
+          tagline: "",
+          availability: "",
+          availability_color: "green",
+          cta_text: "",
+          cta_href: "",
+        };
+
         heroSettings.forEach((setting) => {
-          hero[setting.key] = setting.value;
+          hero[setting.key] = setting.value || "";
         });
+
         setHeroData(hero);
       }
 
       // Fetch badges
-      const { data: badgesData } = await supabase
+      const { data: badgesData, error: badgesError } = await supabase
         .from("hero_badges")
         .select("*")
         .order("order_index");
 
+      if (badgesError) {
+        console.error("Error fetching badges:", badgesError);
+      }
+
       if (badgesData) setBadges(badgesData);
 
       // Fetch social links
-      const { data: socialData } = await supabase
+      const { data: socialData, error: socialError } = await supabase
         .from("social_links")
         .select("*")
         .order("order_index");
+
+      if (socialError) {
+        console.error("Error fetching social links:", socialError);
+      }
 
       if (socialData) setSocialLinks(socialData);
     } catch (error) {

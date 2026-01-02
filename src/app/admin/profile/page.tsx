@@ -40,16 +40,31 @@ export default function ProfilePage() {
 
   async function fetchProfile() {
     try {
-      const { data } = await supabase
+      const { data, error } = await supabase
         .from("site_settings")
         .select("*")
         .eq("category", "profile");
 
-      if (data) {
-        const profileData: any = {};
+      if (error) {
+        console.error("Error fetching profile:", error);
+      }
+
+      if (data && data.length > 0) {
+        const profileData: any = {
+          name: "",
+          title: "",
+          bio: "",
+          email: "",
+          phone: "",
+          location: "",
+          avatar_url: "",
+          resume_url: "",
+        };
+
         data.forEach((setting) => {
-          profileData[setting.key] = setting.value;
+          profileData[setting.key] = setting.value || "";
         });
+
         setProfile(profileData as ProfileData);
       }
     } catch (error) {
@@ -111,19 +126,48 @@ export default function ProfilePage() {
       // Upload to Supabase Storage
       const { error: uploadError } = await supabase.storage
         .from("media")
-        .upload(filePath, file);
+        .upload(filePath, file, {
+          cacheControl: "3600",
+          upsert: false,
+        });
 
-      if (uploadError) throw uploadError;
+      if (uploadError) {
+        console.error("Upload error:", uploadError);
+        throw new Error(uploadError.message || "Erreur lors de l'upload");
+      }
 
       // Get public URL
       const { data: urlData } = supabase.storage
         .from("media")
         .getPublicUrl(filePath);
 
-      setProfile({ ...profile, avatar_url: urlData.publicUrl });
-    } catch (error) {
+      if (!urlData?.publicUrl) {
+        throw new Error("Impossible d'obtenir l'URL publique");
+      }
+
+      const newAvatarUrl = urlData.publicUrl;
+
+      // Update profile state
+      setProfile({ ...profile, avatar_url: newAvatarUrl });
+
+      // Save to database immediately
+      await supabase
+        .from("site_settings")
+        .upsert(
+          {
+            key: "avatar_url",
+            value: newAvatarUrl,
+            category: "profile",
+            type: "text",
+            description: "Avatar URL",
+          },
+          { onConflict: "key" }
+        );
+
+      alert("Photo uploadée avec succès !");
+    } catch (error: any) {
       console.error("Error uploading avatar:", error);
-      alert("Erreur lors de l'upload de la photo");
+      alert(`Erreur : ${error.message || "Impossible d'uploader la photo"}`);
     } finally {
       setUploadingAvatar(false);
     }

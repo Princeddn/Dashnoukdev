@@ -45,20 +45,28 @@ export default function AppearancePage() {
   async function fetchAppearanceSettings() {
     try {
       // Fetch section configurations
-      const { data: sectionsData } = await supabase
+      const { data: sectionsData, error: sectionsError } = await supabase
         .from("section_config")
         .select("*")
         .order("order_index");
 
+      if (sectionsError) {
+        console.error("Error fetching sections:", sectionsError);
+      }
+
       if (sectionsData) setSections(sectionsData);
 
       // Fetch theme settings
-      const { data: themeData } = await supabase
+      const { data: themeData, error: themeError } = await supabase
         .from("site_settings")
         .select("*")
         .eq("category", "theme");
 
-      if (themeData) {
+      if (themeError) {
+        console.error("Error fetching theme:", themeError);
+      }
+
+      if (themeData && themeData.length > 0) {
         const themeSettings: any = {};
         themeData.forEach((setting) => {
           themeSettings[setting.key] = setting.value;
