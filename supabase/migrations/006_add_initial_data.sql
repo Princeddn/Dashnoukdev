@@ -17,7 +17,7 @@ INSERT INTO skills (name, category, proficiency, icon, order_index) VALUES
 ('PostgreSQL', 'Backend', 75, '🐘', 8),
 ('Supabase', 'Backend', 80, '⚡', 9),
 ('REST APIs', 'Backend', 85, '🔌', 10),
-
+ 
 -- IoT
 ('Arduino', 'Mobile', 90, '🔧', 11),
 ('ESP32', 'Mobile', 85, '📡', 12),

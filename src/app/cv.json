@@ -1,0 +1,413 @@
+{
+  "nom": "Prince Noukounwoui",
+  "localisation": "Lyon, Auvergne-Rhône-Alpes, France",
+  "titre": "Étudiant en Master 2 Ingénierie Durable des Bâtiments Communicants Intelligents (ISTIC Rennes)",
+  "coordonnees": {
+    "telephone": "0612719903",
+    "email": "noukounwouiprince@gmail.com",
+    "linkedin": "https://www.linkedin.com/in/prince-noukounwoui-ba1978217",
+    "photo": "./assets/images/profile.jpg"
+  },
+  "resume": "Actuellement en alternance chez JEEDOM, je travaille sur l'intégration de solutions Smarthome, Smartbuilding et Smartcity, en mettant l'accent sur les technologies Zigbee et LoRaWAN. Mes tâches incluent le choix et les tests de produits, la création de dashboards énergétiques, ainsi que le support d'installations GTB. Mes expériences précédentes, notamment chez Qotto et Golf Business Company, m'ont permis de développer des compétences solides en maintenance photovoltaïque, analyse de données IoT et optimisation des infrastructures électriques.",
+  "competences": [
+    "JavaScript",
+    "Python",
+    "ZigBee",
+    "LoRa",
+    "KNX",
+    "LoRaWAN",
+    "GTB/GTC",
+    "Analyse de données IoT",
+    "Maintenance photovoltaïque",
+    "Électrotechnique",
+    "QGIS / ArcGIS",
+    "Autocad",
+    "ArchiCAD",
+    "VBA Excel",
+    "GlobalMapper",
+    "PVSYST",
+    "Comsol",
+    "MatLab"
+  ],
+  "certifications": [
+    "Certificat Solutions Victron Energy pour les télécoms",
+    "LoRa et LoRaWAN pour l'Internet des Objets",
+    "Analyse et dépannage à distance par VRM"
+  ],
+  "experiences": [
+    {
+      "entreprise": "JEEDOM",
+      "poste": "Alternant intégrateur smarthome, smartbuilding et smartcity",
+      "periode": "Septembre 2025 - Présent",
+      "lieu": "Lyon, France",
+      "missions": [
+        "Choix et tests des produits (Zigbee & LoRaWAN)",
+        "Intégration des décodeurs",
+        "Appairage et réalisation de coffrets domotiques",
+        "Création de dashboards énergétiques et widgets",
+        "Suivi et support d'installations GTB",
+        "Prise en main du KNX sur Jeedom",
+        "Etude d'integration de protocole domotique dans un automate programmable industrielle"
+      ]
+    },
+    {
+      "entreprise": "JEEDOM",
+      "poste": "Stagiaire en intégration smarthome, smartbuilding et smartcity",
+      "periode": "Mai 2025 - Août 2025",
+      "lieu": "Lyon, France",
+      "missions": [
+        "Choix et tests des produits (Zigbee & LoRaWAN)",
+        "Intégration des décodeurs",
+        "Appairage et réalisation de coffrets domotiques",
+        "Création de dashboards énergétiques et widgets",
+        "Suivi et support d'installations GTB",
+        "Prise en main du KNX sur Jeedom"
+      ]
+    },
+    {
+      "entreprise": "Qotto",
+      "poste": "Stagiaire Analyste Junior – Maintenance et Intervention Photovoltaïque",
+      "periode": "Avril 2023 - Août 2023",
+      "lieu": "Cotonou, Bénin",
+      "missions": [
+        "Surveillance à distance des kits solaires via plateforme IoT",
+        "Maintenance préventive et curative à distance",
+        "Analyse des données de production et de charge",
+        "Coordination des interventions terrain via Google Sheets"
+      ]
+    },
+    {
+      "entreprise": "Golf Business Company",
+      "poste": "Chargé d'Études en Infrastructures Électriques",
+      "periode": "Juillet 2022 - Mars 2023",
+      "lieu": "Cotonou, Bénin",
+      "missions": [
+        "Cartographie réseaux électriques et traitement de données GPS (QGIS, ArcGIS)",
+        "Plans géoréférencés pour optimisation d'infrastructures",
+        "Rapports techniques (sécurité, coûts, faisabilité)",
+        "Contribution à l'électrification rurale"
+      ]
+    },
+    {
+      "entreprise": "ASEMI SA",
+      "poste": "Technicien Électrotechnicien – Réseaux Basse Tension",
+      "periode": "Avril 2022 - Juin 2022",
+      "lieu": "Cotonou, Bénin",
+      "missions": [
+        "Construction et déploiement de réseaux BT souterrains",
+        "Maintenance postes HT/BT",
+        "Analyse de performances et supervision"
+      ]
+    },
+    {
+      "entreprise": "Songhaï Centre",
+      "poste": "Technicien Électrotechnique",
+      "periode": "Juillet 2021 - Septembre 2021",
+      "lieu": "Porto-Novo, Bénin",
+      "missions": [
+        "Rebobinage de moteurs AC triphasés",
+        "Installation et entretien d'équipements électrotechniques",
+        "Mise en place de procédures de test et diagnostic"
+      ]
+    }
+  ],
+  "formation": [
+    {
+      "ecole": "Université de Rennes 1",
+      "diplome": "Master Ingénierie Durable des Bâtiments Communicants Intelligents",
+      "periode": "Septembre 2024 - Juin 2026"
+    },
+    {
+      "ecole": "Université de Franche-Comté",
+      "diplome": "Licence Ingénierie électrique et énergie",
+      "periode": "Septembre 2023 - Juin 2024"
+    },
+    {
+      "ecole": "Esmer (École Supérieure des Métiers des Énergies Renouvelables)",
+      "diplome": "Licence professionnelle Génie électrique et énergie renouvelable",
+      "periode": "Novembre 2020 - Juin 2022"
+    }
+  ],
+  "projets": [
+    {
+      "nom": "LoRaWAN Plug and Play",
+      "periode": "Novembre 2024 - Avril 2025",
+      "organisation": "Université de Rennes",
+      "description": "Développement d'une bibliothèque Python pour décoder les trames LoRaWAN. Cette bibliothèque permet d'extraire automatiquement les informations des capteurs (fabricant, modèle, données mesurées) et de reconnaître les capteurs grâce à l'analyse des trames. Elle est conçue pour faciliter la gestion et l'intégration des capteurs dans des systèmes IoT.",
+      "competences": [
+        "Internet of Things (IoT)",
+        "Gestion des technologies de l'information",
+        "Bases de données",
+        "Network server",
+        "LoRaWAN",
+        "Processus de la qualité",
+        "Réseaux de capteurs sans fil",
+        "Python (langage de programmation)",
+        "Cloud",
+        "Linux",
+        "Réseaux informatiques",
+        "SSH",
+        "Gestion d'équipe"
+      ],
+      "statut": "Fait",
+      "type": "Académique",
+      "liens": {
+        "github": "https://princeddn.github.io/chirp-api/",
+        "documentation": "https://www.canva.com/design/DAGky2L7_84/lE3B8_EZERy5ZF2FewYPlw/edit?utm_content=DAGky2L7_84&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton"
+      },
+      "image": "./assets/images/projects/lorawan-project.jpg",
+      "tags": [
+        "Python",
+        "IoT",
+        "LoRaWAN",
+        "Capteurs",
+        "Chirpstack"
+      ],
+      "domain": "iot"
+    },
+    {
+      "nom": "Modélisation et stabilisation d’un pendule inversé",
+      "periode": "2023 - 2024",
+      "organisation": "UFR STGI – Université de Franche-Comté",
+      "description": "Projet académique portant sur la modélisation dynamique et la stabilisation d’un pendule inversé monté sur chariot. Le travail a consisté à dériver les équations du mouvement à l’aide de la méthode de Lagrange, linéariser le modèle autour de l’équilibre vertical, définir les fonctions de transfert et réaliser une représentation en espace d’état. Une commande PID a ensuite été conçue et réglée sous MATLAB/Simulink afin d’assurer la stabilité et de respecter les contraintes de temps de stabilisation et de dépassement lors de perturbations impulsionnelles. L’étude inclut analyse, simulation et validation des performances.",
+      "competences": [
+        "Modélisation de systèmes dynamiques",
+        "Méthode de Lagrange",
+        "Automatique et commande des systèmes",
+        "Conception de contrôleur PID",
+        "Analyse en espace d’état",
+        "Fonctions de transfert",
+        "MATLAB / Simulink",
+        "Analyse de stabilité",
+        "Traitement et validation de performances",
+        "Travail en équipe",
+        "Rédaction scientifique"
+      ],
+      "statut": "Fait",
+      "type": "Académique",
+      "liens": {
+        "github": "",
+        "documentation": ""
+      },
+      "image": "",
+      "tags": [
+        "Automatique",
+        "PID",
+        "Modélisation",
+        "MATLAB",
+        "Contrôle",
+        "Systèmes dynamiques"
+      ],
+      "domain": "control-system"
+    },
+    {
+      "nom": "Création d'une mini station météo avec Arduino",
+      "periode": "Juillet 2021 - Août 2021",
+      "organisation": "Esmer (École Supérieure des Métiers des Énergies Renouvelables)",
+      "description": "Projet de mini station météo avec Arduino, intégrant des capteurs pour mesurer la vitesse du vent (anémomètre) et les précipitations (pluviomètre). Les données collectées sont affichées en temps réel sur un écran LCD, grâce à une programmation optimisée en Arduino. Ce projet visait à concevoir une solution compacte, efficace et accessible pour surveiller les conditions météorologiques locales.",
+      "competences": [
+        "Internet of Things (IoT)",
+        "Capteurs",
+        "Arduino",
+        "Processus de la qualité",
+        "Électronique Embarqué",
+        "Électronique",
+        "Arduino IDE"
+      ],
+      "statut": "Fait",
+      "type": "Académique",
+      "liens": {},
+      "image": "./assets/images/projects/arduino-meteo.jpg",
+      "tags": [
+        "Arduino",
+        "IoT",
+        "Capteurs",
+        "LCD"
+      ],
+      "domain": "iot"
+    },
+    {
+      "nom": "Conception d'un logiciel de dimensionnement de système photovoltaïque avec Python",
+      "periode": "Janvier 2020 - Février 2020",
+      "organisation": "Esmer (École Supérieure des Métiers des Énergies Renouvelables)",
+      "description": "Développement d'un logiciel complet pour le dimensionnement des systèmes photovoltaïques. L'application permet de calculer la taille optimale des installations solaires en fonction des besoins énergétiques, de l'irradiation solaire locale et des contraintes techniques. Interface graphique intuitive développée en Python pour faciliter l'utilisation par les professionnels du secteur.",
+      "competences": [
+        "Processus de la qualité",
+        "Python (langage de programmation)",
+        "Conception d'interface graphique",
+        "Énergies renouvelables",
+        "Dimensionnement photovoltaïque"
+      ],
+      "statut": "Fait",
+      "type": "Académique",
+      "liens": {
+        "github": "https://github.com/prince-noukounwoui/pv-dimensioning-tool",
+        "documentation": "https://pv-tool-docs.readthedocs.io"
+      },
+      "image": "./assets/images/projects/pv-software.jpg",
+      "tags": [
+        "Python",
+        "Énergie",
+        "Interface",
+        "Photovoltaïque"
+      ],
+      "domain": "energy"
+    },
+    {
+      "nom": "Conception d'un progiciel de dimensionnement de réseau électrique Basse Tension",
+      "periode": "Fevrier 2022 - Juillet 2022",
+      "organisation": "Esmer (École Supérieure des Métiers des Énergies Renouvelables)",
+      "description": "Développement d'un logiciel complet pour le dimensionnement des réseaux électriques basse tension. L'application permet de calculer les sections de câbles, chutes de tension et dimensionnement des équipements de protection. Interface développée en VBA Excel pour une utilisation pratique par les électriciens et ingénieurs.",
+      "competences": [
+        "Processus de la qualité",
+        "VBA Excel",
+        "Conception d'interface graphique",
+        "Réseau électrique Basse tension",
+        "Dimensionnement réseau électrique"
+      ],
+      "statut": "Fait",
+      "type": "Académique",
+      "liens": {},
+      "image": "./assets/images/projects/electrical-network.jpg",
+      "tags": [
+        "VBA",
+        "Excel",
+        "Électrique",
+        "Dimensionnement",
+        "Rseau Électrique"
+      ],
+      "domain": "electricité"
+    },
+    {
+      "nom": "Conception et dimensionnement d'un biodigesteur pour la production de biogaz",
+      "periode": "Mars 2021 - Juin 2021",
+      "organisation": "Esmer (École Supérieure des Métiers des Énergies Renouvelables)",
+      "description": "Projet de conception d'un biodigesteur pour la production de biogaz à partir de déchets organiques. Le projet incluait le dimensionnement du réacteur, l'étude de faisabilité technique et économique, ainsi que l'analyse des performances énergétiques. Utilisation de Comsol pour la simulation des processus de fermentation anaérobie.",
+      "competences": [
+        "Énergies renouvelables",
+        "Biomasse",
+        "Comsol",
+        "Dimensionnement énergétique",
+        "Processus de fermentation",
+        "Analyse économique",
+        "Processus de la qualité"
+      ],
+      "statut": "Fait",
+      "type": "Académique",
+      "liens": {},
+      "image": "./assets/images/projects/biodigester.jpg",
+      "tags": [
+        "Biomasse",
+        "Comsol",
+        "Énergie",
+        "Biodigesteur"
+      ],
+      "domain": "energy"
+    }
+  ],
+  "domains": {
+    "iot": {
+      "name": "IoT & Domotique",
+      "icon": "fas fa-home",
+      "description": "Smart Home, Smart Building, Smart City",
+      "technologies": [
+        "Zigbee",
+        "LoRaWAN",
+        "KNX",
+        "Jeedom",
+        "GTB/GTC",
+        "Meshtastic"
+      ],
+      "color": "rgba(0, 122, 255, 0.8)",
+      "theme": "iot"
+    },
+    "energy": {
+      "name": "Énergie Renouvelable",
+      "icon": "fas fa-solar-panel",
+      "description": "Systèmes solaires, monitoring énergétique",
+      "technologies": [
+        "Photovoltaïque",
+        "Monitoring IoT",
+        "Analyse de données",
+        "VRM",
+        "PVSYST"
+      ],
+      "color": "rgba(255, 204, 0, 0.8)",
+      "theme": "solar"
+    },
+    "electricité": {
+      "name": "Réseau électrique & Électrotechnique",
+      "icon": "fas fa-cogs",
+      "description": "Réseaux électriques, cartographie, maintenance industrielle",
+      "technologies": [
+        "QGIS",
+        "ArcGIS",
+        "Réseaux BT/HT",
+        "Moteurs AC",
+        "Cartographie GPS",
+        "GlobalMapper"
+      ],
+      "color": "rgba(175, 82, 222, 0.8)",
+      "theme": "network"
+    }
+  },
+  "company_domains": {
+    "JEEDOM": "iot",
+    "Qotto": "energy",
+    "Golf Business Company": "electricité",
+    "ASEMI SA": "electricité",
+    "Songhaï Centre": "electricité"
+  },
+  "skill_icons": {
+    "JavaScript": "fab fa-js-square",
+    "Python": "fab fa-python",
+    "HTML": "fab fa-html5",
+    "CSS": "fab fa-css3-alt",
+    "ZigBee": "fas fa-wifi",
+    "LoRa": "fas fa-broadcast-tower",
+    "LoRaWAN": "fas fa-satellite-dish",
+    "KNX": "fas fa-network-wired",
+    "Internet of Things (IoT)": "fas fa-microchip",
+    "Capteurs": "fas fa-thermometer-half",
+    "Arduino": "fas fa-microchip",
+    "Communication sans fil": "fas fa-wifi",
+    "GTB/GTC": "fas fa-building",
+    "Analyse de données IoT": "fas fa-chart-line",
+    "Maintenance photovoltaïque": "fas fa-tools",
+    "Électrotechnique": "fas fa-bolt",
+    "QGIS / ArcGIS": "fas fa-map-marked-alt",
+    "Bases de données": "fas fa-database",
+    "Network server": "fas fa-server",
+    "Processus de la qualité": "fas fa-check-circle",
+    "Réseaux de capteurs sans fil": "fas fa-wifi",
+    "Cloud": "fas fa-cloud",
+    "Linux": "fab fa-linux",
+    "Réseaux informatiques": "fas fa-network-wired",
+    "SSH": "fas fa-terminal",
+    "Gestion d'équipe": "fas fa-users",
+    "Électronique Embarqué": "fas fa-microchip",
+    "Électronique": "fas fa-microchip",
+    "Arduino IDE": "fas fa-code",
+    "Conception d'interface graphique": "fas fa-desktop",
+    "Énergies renouvelables": "fas fa-leaf",
+    "Dimensionnement photovoltaïque": "fas fa-solar-panel",
+    "VBA Excel": "fas fa-file-excel",
+    "Réseau électrique Basse tension": "fas fa-bolt",
+    "Dimensionnement réseau électrique": "fas fa-project-diagram",
+    "Cartographie GPS": "fas fa-map-marked-alt",
+    "Planification de projets": "fas fa-tasks",
+    "Coordination d'équipe": "fas fa-users",
+    "Supervision": "fas fa-eye",
+    "Gestion de la maintenance": "fas fa-wrench",
+    "Autocad": "fas fa-drafting-compass",
+    "ArchiCAD": "fas fa-building",
+    "GlobalMapper": "fas fa-globe",
+    "PVSYST": "fas fa-solar-panel",
+    "Comsol": "fas fa-wave-square",
+    "MatLab": "fas fa-calculator",
+    "Biomasse": "fas fa-seedling",
+    "Dimensionnement énergétique": "fas fa-calculator",
+    "Processus de fermentation": "fas fa-flask",
+    "Analyse économique": "fas fa-chart-pie"
+  }
+}

@@ -307,6 +307,7 @@ export function useProfileData(): CMSResponse<ProfileInfo> {
             profileData.name = setting.value;
             break;
           case 'profile_photo':
+          case 'profile_avatar_url': // Also check for avatar_url
             profileData.photo = setting.value;
             break;
           case 'profile_initials':
